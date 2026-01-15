@@ -1,0 +1,30 @@
+# SSH config template
+# Copy this file to ~/.ssh/config and customize
+
+# GitHub
+Host gh github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_key
+    IdentitiesOnly yes
+
+# GitLab
+Host gl gitlab.com
+    HostName gitlab.com
+    User git
+    IdentityFile ~/.ssh/gitlab_key
+    IdentitiesOnly yes
+
+# Work server example
+Host work
+    HostName work.example.com
+    User your_username
+    IdentityFile ~/.ssh/work_key
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+
+# Local host example
+Host local
+    HostName localhost
+    User your_username
+    Port 2222

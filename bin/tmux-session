@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Create or attach to a named tmux session
+
+SESSION=${1:-work}
+
+# Check if session exists
+if tmux has-session -t "$SESSION" 2>/dev/null; then
+    tmux attach-session -t "$SESSION"
+else
+    # Create new session
+    tmux new-session -d -s "$SESSION" -n main
+
+    # If directory exists, cd into it
+    if [ -d "$HOME/dev/$SESSION" ]; then
+        tmux send-keys -t "$SESSION" "cd ~/dev/$SESSION" C-m
+    fi
+
+    tmux attach-session -t "$SESSION"
+fi

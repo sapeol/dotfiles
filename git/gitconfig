@@ -3,6 +3,9 @@
     pager = delta
     excludesfile = ~/.gitignore_global
 
+[commit]
+    template = ~/dotfiles/git/commit-template.txt
+
 [delta]
     navigate = true
     side-by-side = true
@@ -14,3 +17,7 @@
     co = checkout
     ci = commit
     amend = commit --amend --no-edit
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    wipe = !git clean -fd && git reset --hard
+    visual = !gitk

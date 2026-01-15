@@ -1,4 +1,14 @@
+# Source shell configs
 source ~/dotfiles/shell/exports.zsh
 source ~/dotfiles/shell/aliases.zsh
+source ~/dotfiles/shell/prompt.zsh
+source ~/dotfiles/shell/fzf.zsh
+source ~/dotfiles/shell/node.zsh
+source ~/dotfiles/shell/lazy.zsh
 
-export EDITOR=vim
+# Starship prompt (optional - uncomment if using starship)
+# eval "$(starship init zsh)"
+
+# Key bindings
+bindkey -v  # Vi mode
+bindkey '^R' history-incremental-search-pattern

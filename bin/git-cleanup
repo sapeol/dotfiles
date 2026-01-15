@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Clean up merged branches and prune remote
+echo "🧹 Cleaning local branches..."
+git branch --merged main | grep -v "main" | grep -v "^\*" | xargs -r git branch -d
+
+echo "🌐 Pruning remote..."
+git remote prune origin
+
+echo "✅ Done"

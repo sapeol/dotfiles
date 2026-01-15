@@ -26,7 +26,29 @@ ln -sf "$DOTFILES/git/tigrc" ~/.tigrc
 
 ln -sf "$DOTFILES/shell/zshrc" ~/.zshrc
 
+# Vim
+ln -sf "$DOTFILES/vim/.vimrc" ~/.vimrc
+
+# SSH config (ask first)
+if [ ! -f ~/.ssh/config ]; then
+    echo ""
+    read -p "📡 Link SSH config template? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        mkdir -p ~/.ssh
+        ln -sf "$DOTFILES/ssh/config" ~/.ssh/config
+        chmod 600 ~/.ssh/config
+        echo "  SSH config linked. Edit ~/.ssh/config to add your keys."
+    fi
+fi
+
+echo ""
 echo "🍺 Installing Homebrew packages..."
 brew bundle --file="$DOTFILES/Brewfile"
 
+echo ""
 echo "✅ Done. Restart terminal."
+echo ""
+echo "💡 Optional:"
+echo "   - Run: ~/dotfiles/macos/defaults.sh  (macOS tweaks)"
+echo "   - Uncomment: eval \"\$(starship init zsh)\" in ~/.zshrc if using starship"

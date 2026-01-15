@@ -1,0 +1,9 @@
+# Subject line (50 chars or less)
+
+# Body: Explain what and why (wrap at 72 chars)
+# More detail...
+
+# Footer: References
+# Fixes #
+# Closes #
+# Refs #
