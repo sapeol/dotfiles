@@ -1,17 +1,21 @@
+# Get dotfiles directory (resolves symlinks)
+DOTFILES="${${${(%):-%N}:A:h}:h}"
+
 # Source shell configs
-source ~/dotfiles/shell/exports.zsh
-source ~/dotfiles/shell/aliases.zsh
-source ~/dotfiles/shell/prompt.zsh
-source ~/dotfiles/shell/fzf.zsh
-source ~/dotfiles/shell/node.zsh
-source ~/dotfiles/shell/lazy.zsh
+source "$DOTFILES/shell/exports.zsh"
+source "$DOTFILES/shell/aliases.zsh"
+source "$DOTFILES/shell/prompt.zsh"
+source "$DOTFILES/shell/fzf.zsh"
+source "$DOTFILES/shell/node.zsh"
+source "$DOTFILES/shell/lazy.zsh"
 
 # Zoxide (smarter cd)
 eval "$(zoxide init zsh)"
 
-# Starship prompt (optional - uncomment if using starship)
-# eval "$(starship init zsh)"
+# Starship prompt
+eval "$(starship init zsh)"
 
 # Key bindings
 bindkey -v  # Vi mode
 bindkey '^R' history-incremental-search-pattern
+export PATH="$HOME/.local/bin:$PATH"

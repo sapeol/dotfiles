@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(brew install:*)",
+      "Bash(starship preset:*)",
+      "Bash(exec:*)",
+      "Bash(# Check where starship looks for config echo \"\"Default starship config locations:\"\" echo \"\" ~/.config/starship.toml\"\" ls -la ~/.config/starship.toml || echo \"\" Not found\"\" echo \"\"\"\" echo \"\"Checking if starship can read the config:\"\" STARSHIP_CONFIG=~/.config/starship.toml starship print-config 2>&1)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(xargs:*)"
+    ]
+  }
+}
