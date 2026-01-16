@@ -94,6 +94,23 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     ln -sf "$DOTFILES/tools/starship.toml" ~/.config/starship.toml
 fi
 
+# Tmux
+echo ""
+read -p "🖥️  Set up tmux config? [y/N] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Link tmux config
+    ln -sf "$DOTFILES/tools/tmux.conf" ~/.tmux.conf
+
+    # Install TPM (plugin manager) if not present
+    if [ ! -d ~/.tmux/plugins/tpm ]; then
+        echo "  Installing TPM (tmux plugin manager)..."
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    fi
+
+    echo "  tmux config linked. Press prefix+I (Ctrl-a then Shift+i) to install plugins."
+fi
+
 echo ""
 echo "🍺 Installing Homebrew packages..."
 brew bundle --file="$DOTFILES/Brewfile"
