@@ -1,0 +1,14 @@
+{
+  "editor.fontFamily": "'Fira Code', 'JetBrainsMono Nerd Font', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.autoSaveDelay": 100,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.fontLigatures.enabled": true,
+  "workbench.colorTheme": "Tokyo Night Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "geminicodeassist.project": "integral-anthem-sl0vz",
+  "claudeCode.preferredLocation": "panel"
+}

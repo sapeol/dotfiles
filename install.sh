@@ -39,9 +39,25 @@ echo ""
 read -p "👻 Link Ghostty terminal config? [y/N] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Add ghostty to Brewfile and install
+    if ! grep -q "ghostty" "$DOTFILES/Brewfile"; then
+        echo 'brew "ghostty"' >> "$DOTFILES/Brewfile"
+    fi
+    brew install ghostty
+
     mkdir -p ~/.config/ghostty
     ln -sf "$DOTFILES/config/ghostty/config" ~/.config/ghostty/config
-    echo "  Ghostty config linked. Restart Ghostty to apply."
+    echo "  Ghostty installed and config linked. Restart Ghostty to apply."
+fi
+
+# VSCode Insiders settings
+echo ""
+read -p "💻 Link VSCode Insiders settings? [y/N] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    mkdir -p ~/Library/Application\ Support/Code\ -\ Insiders/User
+    ln -sf "$DOTFILES/config/vscode-insiders/settings.json" ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
+    echo "  VSCode Insiders settings linked. Reload VSCode Insiders to apply."
 fi
 
 # SSH config (ask first)
