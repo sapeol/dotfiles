@@ -1,18 +1,19 @@
 #!/usr/bin/env bash
 set -e
 
-DOTFILES="$HOME/dotfiles"
+# Get the directory where this script is located
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Prompt for git config
-echo "👤 Git setup"
-read -p "  Your name: " GIT_NAME
-read -p "  Your email: " GIT_EMAIL
-
 echo ""
-echo "🔗 Linking dotfiles..."
+read -p "👤 Set up Git config? [y/N] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    read -p "  Your name: " GIT_NAME
+    read -p "  Your email: " GIT_EMAIL
 
-# Create gitconfig with user info
-cat > ~/.gitconfig << EOF
+    # Create gitconfig with user info
+    cat > ~/.gitconfig << EOF
 [user]
     name = $GIT_NAME
     email = $GIT_EMAIL
@@ -21,8 +22,12 @@ cat > ~/.gitconfig << EOF
     path = $DOTFILES/git/gitconfig
 EOF
 
-ln -sf "$DOTFILES/git/gitignore_global" ~/.gitignore_global
-ln -sf "$DOTFILES/git/tigrc" ~/.tigrc
+    ln -sf "$DOTFILES/git/gitignore_global" ~/.gitignore_global
+    ln -sf "$DOTFILES/git/tigrc" ~/.tigrc
+fi
+
+echo ""
+echo "🔗 Linking dotfiles..."
 
 ln -sf "$DOTFILES/shell/zshrc" ~/.zshrc
 
