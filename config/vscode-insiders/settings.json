@@ -1,6 +1,7 @@
 {
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
   "editor.fontLigatures": true,
+  "editor.fontSize": 18,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
