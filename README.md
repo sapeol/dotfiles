@@ -9,6 +9,11 @@ dotfiles/
 ├── README.md
 ├── install.sh
 ├── Brewfile
+├── config/
+│   ├── ghostty/
+│   │   └── config
+│   └── vscode-insiders/
+│       └── settings.json
 ├── git/
 │   ├── gitconfig
 │   ├── gitignore_global
@@ -257,4 +262,7 @@ gping 8.8.8.8 --interval 0.5  # Faster updates
 ## Optional
 
 - Run `~/dotfiles/macos/defaults.sh` for macOS tweaks
+- Run installer prompts for:
+  - **Ghostty** - Modern terminal emulator with JetBrains Mono Nerd Font
+  - **VSCode Insiders** - Editor settings with terminal ligatures enabled
 - Uncomment `eval "$(starship init zsh)"` in `~/.zshrc` for starship prompt
