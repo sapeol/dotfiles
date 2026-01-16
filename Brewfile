@@ -13,7 +13,7 @@ brew "bat"      # better cat
 brew "fd"       # better find
 brew "ripgrep"  # better grep
 brew "git-delta"
-brew "exa"      # better ls (or ls alternatives)
+brew "eza"      # better ls (exa replacement)
 brew "zoxide"   # smarter cd
 
 # Development

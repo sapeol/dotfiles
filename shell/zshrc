@@ -6,6 +6,9 @@ source ~/dotfiles/shell/fzf.zsh
 source ~/dotfiles/shell/node.zsh
 source ~/dotfiles/shell/lazy.zsh
 
+# Zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
 # Starship prompt (optional - uncomment if using starship)
 # eval "$(starship init zsh)"
 

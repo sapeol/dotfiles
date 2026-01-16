@@ -100,10 +100,12 @@ nt    # npm test
 | `bat` | `cat` | Syntax highlighting |
 | `fd` | `find` | Faster, simpler |
 | `rg` | `grep` | 10-100x faster |
-| `exa` | `ls` | Colors, git status |
+| `eza` | `ls` | Colors, git status |
 | `delta` | git diff | Side-by-side, highlighting |
 | `fzf` | Ctrl+R | Fuzzy search everything |
-| `zoxide` | `cd` | Smart directory jumping |
+| `zoxide` | `z` command | Smart directory jumping |
+
+**Note:** `cat`, `ls`, and `grep` are aliased to use the better tools. Use `\cat`, `\ls`, or `\grep` to bypass.
 
 ## Tool Deep Dive
 
@@ -147,14 +149,14 @@ rg -v "test"         # Invert match (exclude)
 
 ---
 
-### `exa` → better `ls`
+### `eza` → better `ls`
 
 ```bash
-exa -la              # Long view, all files
-exa --tree           # Directory tree
-exa --tree -L 2      # Tree, 2 levels deep
-exa -lg              # Long view with git status
-exa -s extension     # Sort by extension
+eza -la              # Long view, all files
+eza --tree           # Directory tree
+eza --tree -L 2      # Tree, 2 levels deep
+eza -lg              # Long view with git status
+eza -s extension     # Sort by extension
 ```
 
 **Why:** Smart colors by file type, shows git status (modified/staged), proper symlink targets, tree view built-in.
