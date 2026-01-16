@@ -36,25 +36,46 @@ ln -sf "$DOTFILES/vim/.vimrc" ~/.vimrc
 
 # Ghostty terminal
 echo ""
-read -p "👻 Link Ghostty terminal config? [y/N] " -n 1 -r
+read -p "👻 Install Ghostty terminal and link config? [y/N] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    # Add ghostty to Brewfile and install
-    if ! grep -q "ghostty" "$DOTFILES/Brewfile"; then
-        echo 'brew "ghostty"' >> "$DOTFILES/Brewfile"
+    # Install Ghostty via Homebrew cask
+    if ! brew list --cask ghostty &>/dev/null; then
+        echo "  Installing Ghostty..."
+        brew install --cask ghostty
     fi
-    brew install ghostty
 
+    # Link config
     mkdir -p ~/.config/ghostty
     ln -sf "$DOTFILES/config/ghostty/config" ~/.config/ghostty/config
-    echo "  Ghostty installed and config linked. Restart Ghostty to apply."
+    echo "  Ghostty config linked. Restart Ghostty to apply."
+
+    # Install JetBrains Mono Nerd Font
+    echo ""
+    read -p "   Install JetBrains Mono Nerd Font? [y/N] " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        if ! brew list --cask font-jetbrains-mono-nerd-font &>/dev/null; then
+            echo "  Installing JetBrains Mono Nerd Font..."
+            brew install --cask font-jetbrains-mono-nerd-font
+        else
+            echo "  JetBrains Mono Nerd Font already installed."
+        fi
+    fi
 fi
 
 # VSCode Insiders settings
 echo ""
-read -p "💻 Link VSCode Insiders settings? [y/N] " -n 1 -r
+read -p "💻 Install VSCode Insiders and link settings? [y/N] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Install VSCode Insiders if not present
+    if ! brew list --cask visual-studio-code@insiders &>/dev/null; then
+        echo "  Installing VSCode Insiders..."
+        brew install --cask visual-studio-code@insiders
+    fi
+
+    # Link settings
     mkdir -p ~/Library/Application\ Support/Code\ -\ Insiders/User
     ln -sf "$DOTFILES/config/vscode-insiders/settings.json" ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
     echo "  VSCode Insiders settings linked. Reload VSCode Insiders to apply."

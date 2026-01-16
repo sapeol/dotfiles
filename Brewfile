@@ -19,6 +19,7 @@ brew "zoxide"   # smarter cd
 # Development
 brew "node"
 brew "fnm"      # fast node version manager
+brew "gh-ost"   # MySQL online schema migration tool
 
 # System Monitoring
 brew "btop"     # better top/htop

@@ -1,13 +1,14 @@
 # Ghostty Terminal Configuration
 # Theme: Tokyo Night
 
-# Font - JetBrains Mono Nerd Font
+# Font - JetBrains Mono Nerd Font (with ligatures)
 font-family = JetBrainsMono Nerd Font
 font-size = 14
 
 # Optional: Use specific variant (uncomment to use)
-# font-family = JetBrainsMonoNL Nerd Font Mono  # NL = No Ligatures
-# font-family = JetBrainsMono Nerd Font Propo    # Propo = Proportional
+# font-family = JetBrainsMono Nerd Font Mono      # Mono (no ligatures)
+# font-family = JetBrainsMonoNL Nerd Font         # NL = No Ligatures
+# font-family = JetBrainsMono Nerd Font Propo     # Propo = Proportional
 
 # Colors (Tokyo Night)
 background = #1a1b26
