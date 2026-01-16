@@ -47,6 +47,23 @@ if [ ! -f ~/.ssh/config ]; then
     fi
 fi
 
+# Starship prompt
+echo ""
+read -p "🚀 Install Starship prompt? [y/N] " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    # Add starship to Brewfile and install
+    if ! grep -q "starship" "$DOTFILES/Brewfile"; then
+        echo 'brew "starship"' >> "$DOTFILES/Brewfile"
+    fi
+    brew install starship
+
+    # Enable starship in zshrc
+    if ! grep -q "starship init zsh" "$DOTFILES/shell/zshrc" | grep -v "^#"; then
+        sed -i '' 's/^# eval "$(starship init zsh)"/eval "$(starship init zsh)"/' "$DOTFILES/shell/zshrc"
+    fi
+fi
+
 echo ""
 echo "🍺 Installing Homebrew packages..."
 brew bundle --file="$DOTFILES/Brewfile"
@@ -55,5 +72,4 @@ echo ""
 echo "✅ Done. Restart terminal."
 echo ""
 echo "💡 Optional:"
-echo "   - Run: ~/dotfiles/macos/defaults.sh  (macOS tweaks)"
-echo "   - Uncomment: eval \"\$(starship init zsh)\" in ~/.zshrc if using starship"
+echo "   - Run: $DOTFILES/macos/defaults.sh  (macOS tweaks)"
