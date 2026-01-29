@@ -28,3 +28,6 @@ brew "gping"    # ping with graph
 
 # Optional: starship prompt (uncomment if using)
 # brew "starship"
+
+# Cloud
+cask "google-cloud-sdk"
