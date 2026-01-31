@@ -17,5 +17,23 @@ eval "$(starship init zsh)"
 
 # Key bindings
 bindkey -v  # Vi mode
-bindkey '^R' history-incremental-search-pattern
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/sudeep/.bun/_bun" ] && source "/Users/sudeep/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/sudeep/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Added by Antigravity
+export PATH="/Users/sudeep/.antigravity/antigravity/bin:$PATH"
+alias nd="npm run dev"
