@@ -17,6 +17,7 @@ eval "$(starship init zsh)"
 
 # Key bindings
 bindkey -v  # Vi mode
+# Ctrl+R is handled by fzf (sourced from $DOTFILES/shell/fzf.zsh)
 export PATH="$HOME/.local/bin:$PATH"
 
 # bun completions
@@ -37,3 +38,21 @@ esac
 # Added by Antigravity
 export PATH="/Users/sudeep/.antigravity/antigravity/bin:$PATH"
 alias nd="npm run dev"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sudeep/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Battery monitoring shortcut
+alias batt="pmset -g batt"
+alias batt-health="system_profiler SPPowerDataType | grep -E \"Cycle Count|Condition|Maximum Capacity\""
+
+
+# 🔋 Battery Management Aliases (batt)
+alias batt-status='batt status'
+alias batt-limit='batt limit'
+alias batt-led-on='echo "ivory" | sudo -S batt magsafe-led enable'
+alias batt-led-off='echo "ivory" | sudo -S batt magsafe-led always-off'
+alias batt-calibrate='batt calibration start'
+alias batt-health='system_profiler SPPowerDataType | grep -E "Cycle Count|Condition|Maximum Capacity\""
