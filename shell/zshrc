@@ -39,10 +39,6 @@ esac
 export PATH="/Users/sudeep/.antigravity/antigravity/bin:$PATH"
 alias nd="npm run dev"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/sudeep/.lmstudio/bin"
-# End of LM Studio CLI section
-
 # Battery monitoring
 export BATT_SOCKET=/opt/homebrew/var/batt.sock
 alias batt="pmset -g batt"
