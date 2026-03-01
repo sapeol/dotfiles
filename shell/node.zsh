@@ -1,11 +1,14 @@
-# Node.js / npm shortcuts
+# Node.js / pnpm shortcuts
 
-# Aliases
-alias nr="npm run"
-alias ni="npm install"
-alias nid="npm install -D"
-alias nis="npm install --save"
-alias ns="npm start"
-alias nt="npm test"
-alias nb="npm run build"
-alias nls="npm list --depth=0"
+# Aliases (pnpm)
+alias nr="pnpm run"
+alias ni="pnpm install"
+alias nid="pnpm install -D"
+alias nis="pnpm install"
+alias ns="pnpm start"
+alias nt="pnpm test"
+alias nb="pnpm run build"
+alias nls="pnpm list --depth=0"
+alias nx="pnpm dlx"
+alias na="pnpm add"
+alias nad="pnpm add -D"
