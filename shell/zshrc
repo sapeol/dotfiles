@@ -43,11 +43,10 @@ alias nd="npm run dev"
 export PATH="$PATH:/Users/sudeep/.lmstudio/bin"
 # End of LM Studio CLI section
 
-
-# Battery monitoring shortcut
+# Battery monitoring
+export BATT_SOCKET=/opt/homebrew/var/batt.sock
 alias batt="pmset -g batt"
 alias batt-health="system_profiler SPPowerDataType | command grep -E \"Cycle Count|Condition|Maximum Capacity\""
-
 
 # 🔋 Battery Management Aliases (batt)
 alias batt-status='batt status'
@@ -55,4 +54,3 @@ alias batt-limit='batt limit'
 alias batt-led-on='echo "ivory" | sudo -S batt magsafe-led enable'
 alias batt-led-off='echo "ivory" | sudo -S batt magsafe-led always-off'
 alias batt-calibrate='batt calibration start'
-alias batt-health='system_profiler SPPowerDataType | command grep -E "Cycle Count|Condition|Maximum Capacity\""

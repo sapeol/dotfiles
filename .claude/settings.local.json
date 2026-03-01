@@ -9,7 +9,26 @@
       "Bash(# Check where starship looks for config echo \"\"Default starship config locations:\"\" echo \"\" ~/.config/starship.toml\"\" ls -la ~/.config/starship.toml || echo \"\" Not found\"\" echo \"\"\"\" echo \"\"Checking if starship can read the config:\"\" STARSHIP_CONFIG=~/.config/starship.toml starship print-config 2>&1)",
       "Bash(git push:*)",
       "Bash(git reset:*)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(brew services list:*)",
+      "Bash(brew list:*)",
+      "Bash(brew uninstall:*)",
+      "Bash(brew search:*)",
+      "Bash(curl:*)",
+      "mcp__zread__search_doc",
+      "Bash(sudo installer:*)",
+      "Bash(/Applications/Tailscale.app/Contents/MacOS/Tailscale:*)",
+      "Bash(/usr/local/bin/tailscale:*)",
+      "Bash(sudo:*)",
+      "Bash(# Check if Tailscale SSH is enabled at tailnet level /Applications/Tailscale.app/Contents/MacOS/Tailscale status:*)",
+      "Bash(readlink:*)",
+      "Bash(pgrep:*)",
+      "Bash(# Check if Tailscale app is set to open at login via modern ServiceManagement sqlite3 /Users/sudeep/Library/Application\\\\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tailscale.ipn.macsys.sfl* || echo \"\"No recent docs\"\" # Check if Tailscale daemon registers at boot via the bundle plutil -p /Applications/Tailscale.app/Contents/Info.plist)",
+      "Bash(defaults read:*)",
+      "Bash(# Verify Network Extension persistence sudo systemextensionsctl list)",
+      "Bash(python3:*)",
+      "Skill(glm-plan-usage:usage-query)",
+      "Skill(glm-plan-usage:usage-query-skill)"
     ]
   }
 }

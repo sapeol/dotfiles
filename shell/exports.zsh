@@ -32,3 +32,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --color=dark'
 
 # Bat (better cat)
 export BAT_THEME="TwoDark"
+
+
+# Android SDK (ADB)
+export ANDROID_SDK_ROOT="/opt/homebrew/share/android-commandlinetools"
+export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"

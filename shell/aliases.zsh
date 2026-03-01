@@ -10,3 +10,5 @@ alias tg="tig"
 alias cat='bat'
 alias ls='eza'
 alias grep='rg'
+
+alias work='ssh sudeep@work-mac'
