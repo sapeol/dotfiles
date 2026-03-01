@@ -1,5 +1,8 @@
 # Node.js / pnpm shortcuts
 
+# npm → pnpm
+alias npm="pnpm"
+
 # Aliases (pnpm)
 alias nr="pnpm run"
 alias ni="pnpm install"
