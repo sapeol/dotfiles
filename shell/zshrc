@@ -41,7 +41,6 @@ alias nd="npm run dev"
 
 # Battery monitoring
 export BATT_SOCKET=/opt/homebrew/var/batt.sock
-alias batt="pmset -g batt"
 alias batt-health="system_profiler SPPowerDataType | command grep -E \"Cycle Count|Condition|Maximum Capacity\""
 
 # 🔋 Battery Management Aliases (batt)
