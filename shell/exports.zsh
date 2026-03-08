@@ -36,3 +36,6 @@ export BAT_THEME="TwoDark"
 # Android SDK (ADB)
 export ANDROID_SDK_ROOT="/opt/homebrew/share/android-commandlinetools"
 export PATH="$ANDROID_SDK_ROOT/platform-tools:$PATH"
+
+# ZAI MCP Server
+export ZAI_API_KEY=b8ba2db866c34122b8bdff319463f7b3.xOf3tn6C29h0Vmwv
